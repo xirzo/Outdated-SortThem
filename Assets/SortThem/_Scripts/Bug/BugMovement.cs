@@ -10,10 +10,12 @@ public class BugMovement : MonoBehaviour
 
     private Rigidbody2D _rigidbody;
 
-    private Vector2 _movementDirection;
-
     private float _movementSpeed;
     private float _movementSpeedMultiplier;
+
+    private Vector2 _movementDirection;
+
+    private bool _isMovingFaster;
 
     private void OnEnable()
     {
@@ -42,7 +44,11 @@ public class BugMovement : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, (Vector3)attackPosition) <= _attackAlertDistance)
         {
-            StartCoroutine(ChangeSpeed());
+            if (!_isMovingFaster)
+            {
+                _isMovingFaster = true;
+                StartCoroutine(ChangeSpeed());
+            }
         }
     }
     private void ChangeDirection()
@@ -64,6 +70,7 @@ public class BugMovement : MonoBehaviour
         _movementSpeed *= _movementSpeedMultiplier;
         yield return new WaitForSeconds(_stats.FastMovingTime);
         _movementSpeed = _stats.MovementSpeed;
+        _isMovingFaster = false;
     }
 
     private void OnDrawGizmos()

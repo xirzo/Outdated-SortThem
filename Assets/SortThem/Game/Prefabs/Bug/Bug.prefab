@@ -168,7 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stats: {fileID: 11400000, guid: 6066d0f193b8b924fae976e1fb901c83, type: 2}
   _handAttack: {fileID: 0}
-  _attackAlertDistance: 1.75
+  _attackAlertDistance: 3
 --- !u!114 &292778600752674328
 MonoBehaviour:
   m_ObjectHideFlags: 0
