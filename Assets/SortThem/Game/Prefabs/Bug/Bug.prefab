@@ -52,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -127,8 +127,6 @@ GameObject:
   - component: {fileID: 4885976600361661008}
   - component: {fileID: 4885976600361661013}
   - component: {fileID: 292778600752674328}
-  - component: {fileID: 4885976600361661014}
-  - component: {fileID: 4885976600361661015}
   - component: {fileID: 8351924648623692538}
   - component: {fileID: 7717908237854516276}
   m_Layer: 7
@@ -167,8 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stats: {fileID: 11400000, guid: 6066d0f193b8b924fae976e1fb901c83, type: 2}
-  _handAttack: {fileID: 0}
-  _attackAlertDistance: 3
+  _attackAlertDistance: 7
 --- !u!114 &292778600752674328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,30 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd4ef86ebbc74a346bc4e86cf59f2fb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4885976600361661014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4885976600361661009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21840770d5e4da2438308fc91179f868, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4885976600361661015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4885976600361661009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 736d30f914cebe34ab7608965646590a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  _deathSound: {fileID: 8300000, guid: b010402c35161e04a933d9c948e36161, type: 3}
 --- !u!50 &8351924648623692538
 Rigidbody2D:
   serializedVersion: 4

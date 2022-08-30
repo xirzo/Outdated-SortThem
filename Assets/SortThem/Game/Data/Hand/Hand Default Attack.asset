@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Hand Default Attack
   m_EditorClassIdentifier: 
   _damage: 25
-  _radius: 0.5
+  _radius: 2.57

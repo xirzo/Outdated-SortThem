@@ -5,10 +5,10 @@ using UnityEngine;
 public class BugMovement : MonoBehaviour
 {
     [SerializeField] private MovementStats _stats;
-    [SerializeField] private HandAttack _handAttack;
     [SerializeField] private float _attackAlertDistance;
 
     private Rigidbody2D _rigidbody;
+    private HandAttack _handAttack;
 
     private float _movementSpeed;
     private float _movementSpeedMultiplier;
@@ -19,6 +19,7 @@ public class BugMovement : MonoBehaviour
 
     private void OnEnable()
     {
+        Hand.Instance.gameObject.TryGetComponent(out _handAttack);
         TryGetComponent(out _rigidbody);
 
         _movementSpeed = _stats.MovementSpeed;

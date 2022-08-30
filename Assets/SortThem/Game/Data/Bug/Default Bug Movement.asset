@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27242844daf4570419a7693dc572742f, type: 3}
   m_Name: Default Bug Movement
   m_EditorClassIdentifier: 
-  _movementSpeed: 8
-  _movementSpeedMultiplier: 1.75
+  _movementSpeed: 6
+  _movementSpeedMultiplier: 2
   _fastMovingTime: 3

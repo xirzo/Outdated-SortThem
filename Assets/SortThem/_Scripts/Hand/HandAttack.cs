@@ -4,10 +4,13 @@ using UnityEngine;
 [RequireComponent(typeof(Inputs))]
 public class HandAttack : MonoBehaviour
 {
+
     public event Action<Vector2> OnAttack;
 
     [SerializeField] private AttackStats _stats;
     [SerializeField] private LayerMask _bugLayer;
+    [SerializeField] private CinemachineShake _cameraShake;
+    [SerializeField] private AudioClip _attackSound;
 
     private Inputs _input;
 
@@ -15,10 +18,12 @@ public class HandAttack : MonoBehaviour
 
     private void OnEnable()
     {
+
         TryGetComponent(out _input);
 
         _input.OnAttackInput += Attack;
     }
+
     private void OnDisable()
     {
         _input.OnAttackInput -= Attack;
@@ -28,6 +33,8 @@ public class HandAttack : MonoBehaviour
         GetTargets();
         ApplyDamage();
 
+        _cameraShake.ShakeCamera();
+        AudioSource.PlayClipAtPoint(_attackSound, transform.position);
         OnAttack?.Invoke(transform.position);
     }
 
@@ -44,7 +51,6 @@ public class HandAttack : MonoBehaviour
             targetHealth.Die();
         }
     }
-
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
